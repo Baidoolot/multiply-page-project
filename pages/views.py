@@ -16,7 +16,6 @@ def contacts(request):
         contacts = f.read()
     return render(request, 'home/contacts.html', {'contacts': contacts})
 
-class ImagesView(ListView):
-    model = Images
-    template_name = 'home/images.html'
-    context_object_name = 'images'
+def image(request):
+    image = Images.objects.all()
+    return render(request, 'home/gallery.html', {'images': image})
